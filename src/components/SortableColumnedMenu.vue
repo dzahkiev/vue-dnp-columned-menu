@@ -25,8 +25,6 @@
           <Container
               group-name="col"
               @drop="(e) => onCardDrop(column.id, e)"
-              @drag-start="(e) => log('drag start', e)"
-              @drag-end="(e) => log('drag end', e)"
               :get-child-payload="getCardPayload(column.id)"
               drag-class="card-ghost"
               drop-class="card-ghost-drop"
@@ -268,7 +266,6 @@ export default {
     },
 
     updateItem(columnId, itemId) {
-      console.log('update')
       const column = this.scene.children.filter(p => p.id === columnId)[0];
       const item = column.children.filter(e => e.id === itemId)[0];
       item.type = this.modal.selected;
@@ -278,11 +275,9 @@ export default {
         item[lang.code].title = that.modal[lang.code].title;
         item[lang.code].isActive = that.modal[lang.code].isActive;
       })
-      console.log(item)
     },
 
     addItem(columnId) {
-      console.log(columnId)
       const column = this.scene.children.filter(p => p.id === columnId)[0];
       let saveLnk = this.modal.selected === 'link';
       column.children.push({
@@ -359,8 +354,6 @@ export default {
           en: {...card.en}
         });
       }
-      console.log(this.modal.ru.title)
-
     },
     changeActivity(lang) {
       this.modal[lang].isActive = true;

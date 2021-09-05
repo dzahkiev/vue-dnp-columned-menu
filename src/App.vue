@@ -49,7 +49,7 @@ const columns = [
     name: 'Колонка #2',
     children: [
       {
-        id: 1,
+        id: 2.1,
         type: 'label',
         ru: {
           title: 'Заголовок',
@@ -63,7 +63,7 @@ const columns = [
         }
       },
       {
-        id: 2,
+        id: 2.2,
         type: 'link',
         ru: {
           title: 'Ссылка меню',
